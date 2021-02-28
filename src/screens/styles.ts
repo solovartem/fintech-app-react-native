@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
     flex: 1;
     background: #F7F7F7;
 `
@@ -11,7 +11,7 @@ export const Container = styled.View`
 export const Header = styled.View`
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 40px;
+    margin-top: 30px;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
@@ -183,4 +183,77 @@ export const FriendImage = styled.Image`
 export const FriendName = styled.Text`
     font-size: 12px;
     color: #FFFFFF;
+`
+
+
+// Transactions
+
+export const TransactionsContainer = styled.View`
+    margin-top: 30px;
+    padding-top: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    height: 100%;
+`
+
+export const TransactionsHeader = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+`
+
+export const TransactionsTitle = styled.Text`
+    font-size: 16px;
+    color: #1F1F1F;
+    font-weight: bold;
+`
+
+export const ShowAllButton = styled.TouchableOpacity`
+    align-items: center;
+    justify-content: center;
+`
+
+export const ShowAllText = styled.Text`
+    font-size: 14px;
+    color: #939393;
+    font-weight: 500;
+`
+
+export const TransactionContent = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+`
+
+export const TransactionAboutContainer = styled.View`
+    margin-bottom: 20px;
+    flex-direction: row;
+`
+
+export const TransactionAbout = styled.View`
+    background: transparent;
+`
+
+export const TransactionPrice = styled.Text`
+    font-size: 18px;
+    color: #222222;
+`
+
+export const TransactionImage = styled.Image`
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+`
+
+export const TransactionName = styled.Text`
+    font-size: 14px;
+    color: #222222;
+    margin-bottom: 5px;
+`
+
+export const TransactionDate = styled.Text`
+    font-size: 12px;
+    color: #8E8E8E;
 `

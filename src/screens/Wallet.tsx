@@ -1,7 +1,6 @@
-import React, {ReactNode} from 'react';
-import { TouchableOpacity, FlatList, Text } from 'react-native';
+import React, { ReactNode } from 'react';
+import { TouchableOpacity, FlatList, Text, View } from 'react-native';
 import { Feather, AntDesign } from '@expo/vector-icons';
-import { StatusBar } from 'expo-status-bar';
 
 import {
     Container,
@@ -29,45 +28,90 @@ import {
     FriendBox,
     FriendName,
     FriendImage,
+    TransactionsContainer,
+    TransactionsTitle,
+    ShowAllButton,
+    ShowAllText,
+    TransactionsHeader,
+    TransactionContent,
+    TransactionAbout,
+    TransactionPrice,
+    TransactionImage,
+    TransactionDate,
+    TransactionName,
+    TransactionAboutContainer
 } from './styles'
-
-interface renderProfile {
-    item: any
-    name: String
-    key: Number
-}
 
 const friends = [
     {
-        key: 1,
+        key: 0,
         image: 'https://img1.looper.com/img/gallery/the-offices-michael-scott-was-almost-a-murderer/intro-1591207215.jpg',
         name: 'Michael S.'
     },
     {
-        key: 2,
+        key: 1,
         image: 'https://pbs.twimg.com/profile_images/1029279458526547969/zBI6sGcD_400x400.jpg',
         name: 'Pam B.'
     },
     {
-        key: 3,
+        key: 2,
         image: 'https://pbs.twimg.com/media/B4S9kSlCEAE6wNl.jpg',
         name: 'Jim H.'
     },
     {
-        key: 4,
+        key: 3,
         image: 'https://laughingsquid.com/wp-content/uploads/2017/09/all-of-jims-brilliant-pranks-against-dwight-on-the-office.png',
         name: 'Dwight S.'
     }
 ]
 
-const RenderFriends = ({item}: renderProfile) =>  {
+const transactions = [
+    {
+        key: 0,
+        company: 'Amazon',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png',
+        date: 'Today, 4:25 PM',
+        price: '-$5.25',
+    },
+    {
+        key: 1,
+        company: 'Burger King',
+        image: 'http://pngimg.com/uploads/burger_king/burger_king_PNG9.png',
+        date: 'Today, 3:25 PM',
+        price: '-$5.25',
+    },
+    {
+        key: 2,
+        company: 'Uber',
+        image: 'https://logodownload.org/wp-content/uploads/2015/05/uber-logo-7-1.png',
+        date: 'Today, 2:25 PM',
+        price: '-$5.25',
+    },
+]
+
+const RenderFriends = ({ item }: any) => {
     return (
-        <Friends>
+        <Friends key={item.key}>
             <FriendBox activeOpacity={0.8}>
-                <FriendImage source={{uri: item.image}}/>
+                <FriendImage source={{ uri: item.image }} />
                 <FriendName>{item.name}</FriendName>
             </FriendBox>
         </Friends>
+    )
+}
+
+const RenderTransactions = ({item}: any) => {
+    return (
+        <TransactionContent>
+            <TransactionAboutContainer>
+                <TransactionImage source={{uri: item.image}}/>
+                <TransactionAbout>
+                    <TransactionName>{item.company}</TransactionName>
+                    <TransactionDate>{item.date}</TransactionDate>
+                </TransactionAbout>
+            </TransactionAboutContainer>
+            <TransactionPrice>{item.price}</TransactionPrice>
+        </TransactionContent>
     )
 }
 
@@ -127,19 +171,39 @@ export default function Wallet() {
                 <SendMoneyTitle>Send money to:</SendMoneyTitle>
                 <FriendsContainer>
                     <AddFriend activeOpacity={0.8}>
-                        <Feather name="user-plus" size={30} color="#FFFFFF"/>
+                        <Feather name="user-plus" size={30} color="#FFFFFF" />
                         <AddFriendText>Add contact</AddFriendText>
                     </AddFriend>
-                    <FlatList 
+
+                    {/* Friends List */}
+                    <FlatList
                         data={friends}
+                        keyExtractor={item => item.key.toString()}
                         renderItem={RenderFriends}
                         showsHorizontalScrollIndicator={false}
                         horizontal
                     />
+
                 </FriendsContainer>
             </SendMoneyContainer>
 
-            <StatusBar style="dark" backgroundColor="#000" />
+            <TransactionsContainer>
+                <TransactionsHeader>
+                    <TransactionsTitle>Recent Transactions</TransactionsTitle>
+                    <ShowAllButton>
+                        <ShowAllText>Show All</ShowAllText>
+                    </ShowAllButton>
+                </TransactionsHeader>
+
+                {/* Transactions List */}
+                <FlatList
+                    data={transactions}
+                    keyExtractor={item => item.key.toString()}
+                    showsVerticalScrollIndicator={false}
+                    renderItem={RenderTransactions}
+                />
+
+            </TransactionsContainer>
         </Container>
     )
 }
