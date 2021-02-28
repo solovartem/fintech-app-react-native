@@ -93,7 +93,7 @@ export const CardNumber = styled.Text`
     color: #FFFFFF;
     line-height: 19px;
     flex: 1;
-` 
+`
 
 
 // MENU ITEMS
@@ -119,6 +119,68 @@ export const MenuItem = styled.TouchableOpacity`
 `
 
 export const MenuTitle = styled.Text`
+    font-size: 12px;
+    color: #FFFFFF;
+`
+
+// SEND MONEY TO FRIENDS
+
+export const SendMoneyContainer = styled.View`
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+`
+export const SendMoneyTitle = styled.Text`
+    color: #1F1F1F;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+`
+
+export const FriendsContainer = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+`
+
+export const AddFriend = styled.TouchableOpacity`
+    border-radius: 10px;
+    background: #1F1F1F;
+    width: 90px;
+    height: 90px;
+    justify-content: space-between;
+    padding: 15px 0px;
+    align-items: center;
+    margin-right: 2px;
+`
+
+export const AddFriendText = styled.Text`
+    font-size: 12px;
+    color: #FFFFFF;
+`
+
+export const Friends = styled.View`
+    flex-direction: row;
+`
+
+export const FriendBox = styled.TouchableOpacity`
+    border-radius: 10px;
+    background: #434FBC;
+    width: 90px;
+    height: 90px;
+    justify-content: space-between;
+    padding: 15px 0px;
+    align-items: center;
+    margin-left: 15px;
+    padding: 10px;
+`
+
+export const FriendImage = styled.Image`
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+`
+
+export const FriendName = styled.Text`
     font-size: 12px;
     color: #FFFFFF;
 `
