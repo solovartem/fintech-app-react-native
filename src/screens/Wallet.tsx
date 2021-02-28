@@ -63,7 +63,7 @@ const friends = [
 const RenderFriends = ({item}: renderProfile) =>  {
     return (
         <Friends>
-            <FriendBox onPress={() => alert("clicou")} key={item.key} activeOpacity={0.8}>
+            <FriendBox activeOpacity={0.8}>
                 <FriendImage source={{uri: item.image}}/>
                 <FriendName>{item.name}</FriendName>
             </FriendBox>
