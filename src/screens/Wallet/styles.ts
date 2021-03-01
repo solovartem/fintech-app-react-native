@@ -1,10 +1,11 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.ScrollView`
+export const Container = styled.View`
     flex: 1;
     background: #F7F7F7;
 `
 
+export const Main = styled.ScrollView``
 
 // HEADER
 
@@ -15,6 +16,17 @@ export const Header = styled.View`
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 3px;
+`
+
+export const NotificationIcon = styled.View`
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    background: #FF1E1E;
+    position: absolute;
+    top: 1;
+    right: 1;
 `
 
 export const ProfileImage = styled.Image`
@@ -41,7 +53,7 @@ export const BellButton = styled.TouchableOpacity`
 
 export const CardContainer = styled.View`
     align-items: center;
-    margin-top: 30px;
+    margin-top: 25px;
 `
 
 export const Card = styled.View`
