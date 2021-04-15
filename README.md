@@ -26,7 +26,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/rodcabral/fintech-app
+$ git clone https://github.com/bellorinrobert/fintech-app-rn
 
 # Go into the repository
 $ cd fintech-app
@@ -38,8 +38,6 @@ $ yarn install
 $ expo start
 ```
 ---
-
-Made with ♥ by Rodrigo Cabral :wave: [Get in touch!](https://www.linkedin.com/in/rodcabral/)
 
 [nodejs]: https://nodejs.org/
 [yarn]: https://yarnpkg.com/
