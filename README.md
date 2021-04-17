@@ -29,7 +29,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 $ git clone https://github.com/solovartem/fintech-app-react-native
 
 # Go into the repository
-$ cd fintech-app
+$ cd fintech-app-react-native
 
 # Install dependencies
 $ yarn install
