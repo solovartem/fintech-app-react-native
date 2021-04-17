@@ -26,7 +26,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/bellorinrobert/fintech-app-rn
+$ git clone https://github.com/solovartem/fintech-app-react-native
 
 # Go into the repository
 $ cd fintech-app
